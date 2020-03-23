@@ -20,7 +20,7 @@ if (count($_POST) > 1) {
     $model->insert($sql_stmt);
 
     // Select result from js_libraries
-    $sql_stmt = "SELECT COUNT(choice) choices_count FROM js_libraries;";
+    $sql_stmt = "SELECT COUNT(choice) choices_count FROM js_libraries";
     $choices_count = $model->select($sql_stmt);
 
     $libraries = array("", "JQuery", "MooTools", "YUI Library", "Glow");
