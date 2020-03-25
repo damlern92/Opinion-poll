@@ -7,7 +7,6 @@
     <title>PHP Frameworks Poll Results</title>
 </head>
     <body>
-        <h1>H1 tag</h1>
     <h2>Opinion Poll Results</h2>
     <p><b>What is your favorite PHP Frameworks?</b></p>
 
