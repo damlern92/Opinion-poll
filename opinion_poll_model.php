@@ -3,33 +3,29 @@
 
 class Opinion_poll_model{
 
-    private $host = 'localhost'; 
-    private $uid = 'root'; 
+    private $host = 'localhost';
+    private $uid = 'root';
     private $pwd = '';
     private $db = 'opinion_poll';
 
-    public $db_handle; 
+    public $db_handle;
 
     public function __construct() {
         // Connect to MySQL server:
-        $this->db_handle = mysqli_connect($this->host, $this->uid, $this->pwd); 
-
+        $this->db_handle = mysqli_connect($this->host, $this->uid, $this->pwd);
         if (!$this->db_handle) die("Unable to connect to MySQL: " . mysqli_error());
-
         if (!mysqli_select_db($this->db_handle,$this->db)) die("Unable to select database: " . mysqli_error());
     }
 
     // $sql_stmt first defined:
     private function execute_query($sql_stmt){
-        $this->db_handle = mysqli_connect($this->host, $this->uid, $this->pwd); 
-        // Execute SQL statement:
+        $this->db_handle = mysqli_connect($this->host, $this->uid, $this->pwd);
         $result = mysqli_query($db_handle,$sql_stmt);
 
         return !$result ? FALSE : TRUE;
     }
 
         public function select($sql_stmt){
-
             $result = mysqli_query($db_handle,$sql_stmt);
             if(!$result) die("Database access failed: " . mysqli_error());
 
@@ -46,8 +42,6 @@ class Opinion_poll_model{
         }
 
         public function insert($sql_stmt){
-            
-            // This function is defined earlier:
             return $this->execute_query($sql_stmt);
         }
 
@@ -61,4 +55,3 @@ class Opinion_poll_model{
 
 
 ?>
-
